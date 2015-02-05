@@ -6,6 +6,8 @@
 */
 var underscoreUppercase = function(array){
 
+    return _.map(array, function(word){ return word.toUpperCase(); });
+
 }
 
 /*
@@ -15,6 +17,9 @@ var underscoreUppercase = function(array){
   It SHOULD use underscore.
 */
 var underscoreSort = function(array){
+
+  return _.sortBy(array, function(i){ return -i; });
+
 
 }
 
@@ -26,6 +31,16 @@ var underscoreSort = function(array){
 */
 var underscoreNamesOnly = function(array) {
 
+  var newArray = [];
+
+    _.map(array, function(obj){
+      if (_.has(obj, "name")) {
+        newArray.push(obj);
+      }
+    });
+
+return newArray;
+
 }
 
 /*
@@ -35,6 +50,10 @@ var underscoreNamesOnly = function(array) {
   It SHOULD use underscore.
 */
 var underscoreFirstFive = function(array) {
+
+
+  return _.find(array, function(num){ return (num % 5 == 0); });
+
 
 }
 
@@ -47,4 +66,10 @@ var underscoreFirstFive = function(array) {
 */
 var underscoreSumOdd = function(array) {
 
+  var odds = [];
+  odds = _.filter(array, function(num){ return num % 2 !== 0; });
+
+  var sum = _.reduce(odds, function(memo, num){ return memo + num; }, 0);
+
+  return sum;
 }
