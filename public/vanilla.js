@@ -33,16 +33,14 @@ var namesOnly = function(array) {
   newArray = [];
 
   var containName = function(value, index) {
-      for (key in value) {
 
-        console.log("in for loop");
+      if ((value.hasOwnProperty("name"))) {
+                  console.log("in if, value = ", value);
 
-        if (key === 'name') {
+        newArray.push(value);
 
-          console.log("in if");
+        console.log("newArray = ", newArray);
 
-          newArray.push(value);
-        }
       }
 
   }
@@ -99,7 +97,6 @@ var sumOdd = function(array) {
     newArray = oddArray.reduce(sum, 0);
 
     return newArray;
-
 
 }
 
