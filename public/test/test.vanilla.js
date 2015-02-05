@@ -27,6 +27,8 @@ describe("Vanilla JavaScript", function(){
       { name: "James", score: 28, ruby: true }
     ];
 
+    console.log(">", namesOnly(inputArray), outputArray)
+
     expect(namesOnly(inputArray)).to.deep.equal(outputArray);
 
   });

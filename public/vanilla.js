@@ -32,20 +32,11 @@ var namesOnly = function(array) {
 
   newArray = [];
 
-  var containName = function(value, index) {
-
-      if ((value.hasOwnProperty("name"))) {
-                  console.log("in if, value = ", value);
-
-        newArray.push(value);
-
-        console.log("newArray = ", newArray);
-
-      }
-
+  var filterName = function(value, index) {
+    return (value.hasOwnProperty("name"))
   }
 
-  newArray = array.filter(containName);
+  newArray = array.filter(filterName);
   return newArray;
 
 }
